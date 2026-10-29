@@ -322,6 +322,7 @@ macro_rules! document_case {
 }
 
 document_case!(twitter);
+document_case!(canada);
 
 /// `next_skip` is one code path that decodes neither numbers nor strings, so it is benchmarked
 /// over a few shapes rather than over every file `test_cases!` covers: `big` for a large mixed
@@ -471,5 +472,7 @@ criterion_group!(
     short_numbers_serde_value,
     twitter_jiter_value,
     twitter_serde_value,
+    canada_jiter_value,
+    canada_serde_value,
 );
 criterion_main!(benches);
