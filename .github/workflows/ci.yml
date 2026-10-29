@@ -118,6 +118,7 @@ jobs:
           RUST_BACKTRACE: 1
 
       - run: uv run crates/jiter/benches/generate_big.py
+      - run: python3 crates/jiter/benches/prepare_documents.py
 
         # since not all benchmarks are run with codspeed, we test them all there
       - run: cargo bench -p jiter -- --test
@@ -224,6 +225,7 @@ jobs:
           bins: cargo-codspeed
 
       - run: uv run crates/jiter/benches/generate_big.py
+      - run: python3 crates/jiter/benches/prepare_documents.py
 
       # cases/ and cases.json are gitignored build artifacts, so a fresh checkout has to build them
       - name: build the json-cases corpus

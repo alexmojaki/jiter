@@ -68,6 +68,7 @@ python-bench:
 
 .PHONY: bench
 bench:
+	python3 crates/jiter/benches/prepare_documents.py
 	cargo bench -p jiter -F python
 
 .PHONY: bench-table-display
