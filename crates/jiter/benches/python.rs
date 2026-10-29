@@ -157,6 +157,10 @@ fn python_parse_canada(c: &mut Criterion) {
     python_parse_file("./benches/canada.json", c, StringCacheMode::All);
 }
 
+fn python_parse_citm_catalog(c: &mut Criterion) {
+    python_parse_file("./benches/citm_catalog.json", c, StringCacheMode::All);
+}
+
 criterion_group!(
     benches,
     python_parse_numeric,
@@ -174,5 +178,6 @@ criterion_group!(
     python_parse_massive_ints_array,
     python_parse_twitter,
     python_parse_canada,
+    python_parse_citm_catalog,
 );
 criterion_main!(benches);
