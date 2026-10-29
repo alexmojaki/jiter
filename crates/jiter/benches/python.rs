@@ -149,6 +149,10 @@ fn python_parse_true_array(c: &mut Criterion) {
     python_parse_file("./benches/true_array.json", c, StringCacheMode::All);
 }
 
+fn python_parse_twitter(c: &mut Criterion) {
+    python_parse_file("./benches/twitter.json", c, StringCacheMode::All);
+}
+
 criterion_group!(
     benches,
     python_parse_numeric,
@@ -164,5 +168,6 @@ criterion_group!(
     python_parse_true_object,
     python_parse_true_array,
     python_parse_massive_ints_array,
+    python_parse_twitter,
 );
 criterion_main!(benches);
